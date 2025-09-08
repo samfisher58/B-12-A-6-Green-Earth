@@ -103,7 +103,7 @@
   <!-- Categories -->
   <div class="col-span-2 w-full">
     <h1 class="text-xl font-semibold mb-4">Categories</h1>
-    <div id="categories-container" class="grid grid-cols-1 gap-3">
+    <div id="categories-container" class="flex flex-wrap justify-center md:grid md:grid-cols-1 gap-3">
       <div>
         <button id="category-button-all-tree"
           onclick="loadAllTree()"
@@ -115,7 +115,7 @@
   </div>
 
   <!-- Tree Section -->
-  <div class="col-span-8">
+  <div class="col-span-8 ">
     <h2 class="text-3xl font-semibold text-center mb-6">
       Choose Your Trees
     </h2>
@@ -125,12 +125,16 @@
   </div>
 
   <!-- Cart -->
-  <div class="bg-slate-600 col-span-2 p-4 rounded">
-    <h2 class="text-lg font-semibold text-white">
+  <div class="col-span-2 p-4 rounded">
+    <h2 class="text-xl font-semibold mb-4">
       Your Cart
     </h2>
     <div id="cart-container" class="grid grid-cols-1 gap-3">
-
+      
+    </div>
+    <div id="total-price-container">
+      <span>Total Price: ৳</span>
+      <span id="total-price">0</span>
     </div>
   </div>
 </section>
