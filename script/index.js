@@ -1,4 +1,5 @@
 const loadCategories = () => {
+  manageSpinner(true)
   fetch("https://openapi.programming-hero.com/api/categories")
     .then((res) => res.json())
     .then((data) => displayCategories(data.categories));
@@ -12,6 +13,7 @@ const removeActive = () => {
 };
 
 const loadPlantByCategory = (id) => {
+  manageSpinner(true)
   const url = `https://openapi.programming-hero.com/api/category/${id}`;
   fetch(url)
     .then((res) => res.json())
@@ -24,6 +26,7 @@ const loadPlantByCategory = (id) => {
 };
 
 const loadAllTree = () => {
+  manageSpinner(true)
   fetch("https://openapi.programming-hero.com/api/plants")
     .then((res) => res.json())
     .then((data) => {
@@ -37,11 +40,22 @@ const loadAllTree = () => {
 };
 
 const loadPlantDetails = (id) => {
+  manageSpinner(true)
   const url = `https://openapi.programming-hero.com/api/plant/${id}`;
   fetch(url)
     .then((res) => res.json())
     .then((data) => displayPlantDetails(data.plants));
 };
+
+const manageSpinner=(status)=>{
+  if(status == true){
+    document.getElementById("spinner").classList.remove("hidden");
+    document.getElementById("tree-container-all").classList.add("hidden");  
+  }else{
+    document.getElementById("tree-container-all").classList.remove("hidden");
+    document.getElementById("spinner").classList.add("hidden"); 
+  }
+}
 
 const displayPlantDetails = (plants) => {
   
@@ -64,6 +78,7 @@ const displayPlantDetails = (plants) => {
   </div>
 </div>`;
   document.getElementById("plant_modal").showModal();
+  manageSpinner(false)
 };
 
 const displayPlants = (plants) => {
@@ -96,7 +111,7 @@ const displayPlants = (plants) => {
     `;
     plantContainer.append(plantCard);
   });
-
+  manageSpinner(false)
 };
 // cart history section
 document
@@ -166,6 +181,7 @@ const displayCategories = (categories) => {
         `;
     categoriesContainer.append(categoryBtn);
   });
+  manageSpinner(false)
 };
 loadCategories();
 loadAllTree();
