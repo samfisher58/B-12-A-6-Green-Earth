@@ -54,7 +54,7 @@ const displayPlantDetails = (plants) => {
       class="rounded-xl" />
   </div>
   <div class="items-center">
-     <h2 class="p-3">${plants.name}</h2> 
+     <h2 class="p-3 font-bold text-xl">${plants.name}</h2> 
     <p class="p-3">${plants.description}</p>
     <div class="flex items-center justify-between p-3">
       <span class="bg-[#DCFCE7] rounded-3xl p-2" >${plants.category}</span>
@@ -81,7 +81,7 @@ const displayPlants = (plants) => {
       class="rounded-xl" />
   </div>
   <div class="items-center">
-    <a href="#" onclick="loadPlantDetails(${plant.id})" class="p-3">${plant.name}</a> 
+    <a href="#" onclick="loadPlantDetails(${plant.id})" class="p-3 font-bold text-xl">${plant.name}</a> 
     <p class="p-3">${plant.description}</p>
     <div class="flex items-center justify-between p-3">
       <span class="bg-[#DCFCE7] rounded-3xl p-2" >${plant.category}</span>
